@@ -1,0 +1,8 @@
+version: 2
+sources:
+  - name: ismail_shop
+    database: my-dbt-analytics-project
+    schema: raw_data
+    tables:
+      - name: orders
+      - name: customers
