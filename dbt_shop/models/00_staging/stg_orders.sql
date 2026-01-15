@@ -1,4 +1,4 @@
-{{ config(tags=["staging"]) }}
+{{ config(tags=["staging_order"]) }}
 
 with source as (
     select * from {{ source('ismail_shop', 'orders') }}
@@ -10,3 +10,4 @@ select
     order_date,
     status
 from source
+-- where order_date >= '{{ var("start_date", "2018-01-01") }}'

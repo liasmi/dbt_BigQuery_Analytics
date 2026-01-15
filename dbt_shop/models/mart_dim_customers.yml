@@ -1,0 +1,19 @@
+version: 2
+models:
+  - name: dim_customers
+    description: "A summary table of customers and their order history."
+    columns:
+      - name: customer_id
+        description: "The primary key for this table."
+        tests:
+          - unique
+          - not_null
+
+      - name: number_of_orders
+        description: "Count of orders placed by the customer."
+        tests:
+          - accepted_values:
+              values: [0, 1, 2, 3, 4, 5, 10] 
+              quote: false
+
+          
